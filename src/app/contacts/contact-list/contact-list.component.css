@@ -1,0 +1,23 @@
+.create-contact-link {
+    color: white;
+    background-color: green;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  
+  .create-contact-link:hover {
+    background-color: darkgreen;
+  }
+
+  .d-flex {
+    display: flex;
+  }
+  
+  .justify-content-between {
+    justify-content: space-between;
+  }
+  
+  .align-items-center {
+    align-items: center;
+  }
