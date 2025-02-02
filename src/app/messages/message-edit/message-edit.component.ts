@@ -12,7 +12,7 @@ export class MessageEditComponent {
   @ViewChild('subject') subjectInputRef: ElementRef;
   @ViewChild('msgText') msgTextInputRef: ElementRef;
   @Output() addMessageEvent = new EventEmitter<Message>();
-  currentSender: string = 'YourName'; // Replace 'YourName' with your actual name
+  currentSender: string = 'Daniel'; 
 
   onSendMessage() {
     const subject = this.subjectInputRef.nativeElement.value;

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-        <a class="navbar-brand" href="#">WeLearn CMS</a>
+            <a class="navbar-brand" href="#">WeLearn CMS</a>
         </div>
 
         <div class="collapse navbar-collapse">
@@ -11,11 +11,13 @@
                 <li><a href="#" (click)="onSelected('contacts')">Contacts</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" role="button">User <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Settings</a></li>
+                <li class="dropdown" cms-dropdown> <!-- Apply the appDropdown directive here -->
+                    <a href="#" class="dropdown-toggle" role="button" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        User <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Other</a></li>
                         <li><a href="#">Logout</a></li>
                     </ul>
                 </li>
