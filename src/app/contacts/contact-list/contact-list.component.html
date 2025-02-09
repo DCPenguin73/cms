@@ -1,13 +1,13 @@
 <div class="panel panel-default">
-    <div class="panel-heading">
-      <div class="d-flex justify-content-between align-items-center">
-        <h2 class="bold">Contacts</h2>
-        <a href="#" class="btn btn-primary btn-sm create-contact-link">Create New Contact</a>
-      </div>
-    </div>
-    <div class="panel-body">
-        <div class="col-md-12">
-            <cms-contact-item *ngFor="let contact of contacts" [contact]="contact" (click)="onSelect(contact)"></cms-contact-item>
-        </div>
+  <div class="panel-heading">
+    <div class="d-flex justify-content-between align-items-center">
+      <h2 class="bold">Contacts</h2>
+      <a href="#" class="btn btn-primary btn-sm create-contact-link">Create New Contact</a>
     </div>
   </div>
+  <div class="panel-body">
+    <div class="col-md-12">
+      <cms-contact-item *ngFor="let contact of contacts" [contact]="contact" (contactSelected)="onSelect(contact)"></cms-contact-item>
+    </div>
+  </div>
+</div>
