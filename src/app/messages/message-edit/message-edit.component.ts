@@ -12,7 +12,8 @@ import { MessageService } from '../message.service';
 export class MessageEditComponent {
   @ViewChild('subject') subjectInputRef: ElementRef;
   @ViewChild('msgText') msgTextInputRef: ElementRef;
-  currentSender: string = 'Daniel'; 
+  @Output() addMessageEvent = new EventEmitter<Message>(); // Add this line
+  currentSender: string = '1'; 
 
   constructor(private messageService: MessageService) {}
 
@@ -23,6 +24,7 @@ export class MessageEditComponent {
   
     console.log('Message sent:', newMessage);
     this.messageService.addMessage(newMessage);
+    this.addMessageEvent.emit(newMessage); // Emit the event
   }
 
   onClear() {

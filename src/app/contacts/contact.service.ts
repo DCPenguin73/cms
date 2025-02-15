@@ -1,3 +1,4 @@
+// contact.service.ts
 import { Injectable, EventEmitter } from '@angular/core';
 import { Contact } from './contact.model';
 import { MOCKCONTACTS } from './MOCKCONTACTS';
@@ -7,9 +8,10 @@ import { MOCKCONTACTS } from './MOCKCONTACTS';
 })
 export class ContactService {
   contacts: Contact[] = [];
-  contactSelectedEvent = new EventEmitter<Contact>();
-  
-  constructor() { 
+  contactChangedEvent = new EventEmitter<Contact[]>(); 
+  contactSelectedEvent = new EventEmitter<Contact>(); 
+
+  constructor() {
     this.contacts = MOCKCONTACTS;
   }
 
@@ -18,11 +20,18 @@ export class ContactService {
   }
 
   getContact(id: string): Contact {
-    for (let contact of this.contacts) {
-      if (contact.id === id) {
-        return contact;
-      }
+    return this.contacts.find(contact => contact.id === id) || null;
+  }
+
+  deleteContact(contact: Contact) {
+    if (!contact) {
+      return;
     }
-    return null;
+    const pos = this.contacts.indexOf(contact);
+    if (pos < 0) {
+      return;
+    }
+    this.contacts.splice(pos, 1);
+    this.contactChangedEvent.emit(this.contacts.slice()); // Emit the updated contact list
   }
 }

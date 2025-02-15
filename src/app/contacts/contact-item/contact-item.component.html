@@ -1,8 +1,8 @@
-<a href="#" class="list-group-item clearfix" (click)="onSelect()">
-    <div class="pull-left">
-      <h4 class="list-group-item-heading">Bro. {{ getLastWord(contact.name) }}</h4>
-    </div>
-    <div class="pull-right">
-      <img [src]="contact.imageUrl" alt="{{ contact.name }}" class="image-responsive" style="height: 50px;">
-    </div>
-  </a>
+<a class="list-group-item clearfix" [routerLink]="['/contacts', contact.id]">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">Bro. {{ getLastWord(contact.name) }}</h4>
+  </div>
+  <div class="pull-right">
+    <img [src]="contact.imageUrl" alt="{{ contact.name }}" class="image-responsive" style="height: 50px;">
+  </div>
+</a>
