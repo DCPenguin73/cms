@@ -10,7 +10,8 @@
       <cms-contact-item 
         *ngFor="let contact of contacts" 
         [contact]="contact" 
-        [routerLink]="['/contacts', contact.id]">
+        [routerLink]="['/contacts', contact.id]"
+        cdkDrag>
       </cms-contact-item>
     </div>
   </div>
